@@ -58,18 +58,24 @@ info = factual.table("hotels-us").select(fields_to_select).include_count("true")
 total_hotels = info.total_count
 p "Total number of hotels: " +  total_hotels.to_s
 
-
-offset = 0
-
 # One at the time
 limit = 1
 
+# If file exists we need to point to proper offset and  beyond what we already wrote to the file
+if File.exist?(file_name)
+  # Get total count of records minus 1 because 
+  # because we do not want to count the headers
+  offset = CSV.read(file_name).length - 1
+  csv = CSV.open(file_name, "a+") 
+else
+  # Default settings when doing a fresh file session
+  offset = 0
+  csv = CSV.open(file_name, "w") 
+  # Write the headers
+  csv << ['Company', 'Address', 'City', 'State', 'Phone Number', 'Zip Code', 'Country']
+end
+
 info = factual.table("hotels-us").select(fields_to_select).offset(offset).limit(limit)
-
-csv = CSV.open(file_name, "w") 
-
-# Write the headers
-csv << ['Company', 'Address', 'City', 'State', 'Phone Number', 'Zip Code', 'Country']
 
 # keep going until we get all the records
 while total_hotels > offset
