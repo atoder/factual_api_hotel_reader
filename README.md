@@ -34,7 +34,8 @@ ruby main.rb custom_name.csv
 
 ## BONUS Functionality - Able to pause and pick up where it left off in case there are any interruptions. 
 Just hit CTRL + C to pause/stop the script
-After you run the **main.rb** with the same file name, it will pick up where it left off
+
+After you run the **ruby main.rb** with the same file name, it will pick up where it left off
 
 # Sample Output Data
 
