@@ -6,6 +6,9 @@ This tool generates all 167,344 or so hotels in in one csv,
 extracting the data 1 chunk at a time incrementally, appending them to the csv file 
 and pausing properly so it doesn't go over the minute and day limit
 
+## API LINK
+http://developer.factual.com/
+
 
 # How it works
 
