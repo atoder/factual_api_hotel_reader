@@ -39,7 +39,7 @@ After you run the **main.rb** with the same file name, it will pick up where it 
 # Sample Output Data
 
 ```
-ompany,Address,City,State,Phone Number,Zip Code,Country
+Company,Address,City,State,Phone Number,Zip Code,Country
 The Mirage Hotel & Casino,3400 Las Vegas Blvd S,Las Vegas,NV,(702) 791-7111,89109,us
 Planet Hollywood Resort and Casino,3667 Las Vegas Blvd S,Las Vegas,NV,(866) 919-7472,89109,us
 Flamingo Las Vegas,3555 Las Vegas Blvd S,Las Vegas,NV,(702) 733-3111,89109,us
