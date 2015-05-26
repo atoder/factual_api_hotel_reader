@@ -32,12 +32,9 @@ To run the script with a custom output file just pass the argument like below
 ruby main.rb custom_name.csv
 ```
 
-## BONUS -  Functionality be be able to pause and pick up where it left off that would be great in case there is any interruptions. 
+## BONUS Functionality - Able to pause and pick up where it left off in case there are any interruptions. 
 Just hit CTRL + C to pause/stop the script
 After you run the **main.rb** with the same file name, it will pick up where it left off
-
-
-
 
 # Sample Output Data
 
