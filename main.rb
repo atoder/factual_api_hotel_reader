@@ -17,7 +17,7 @@ end
 
 if zipcode_file.nil? || zipcode_file.empty?
   #if empty, use default hotels.csv
-  zipcode_file = "zipcode.txt"
+  zipcode_file = "zipcodes.txt"
 end
 
 
@@ -26,7 +26,7 @@ hotel_reader = HotelReader.new
 
 # Get total count
 total_hotels = hotel_reader.get_hotel_total_count
-p "Total number of hotels: " +  total_hotels.to_s
+p "Total number of hotels in factual database: " +  total_hotels.to_s
 
 hotel_reader.run(output_file, zipcode_file)
 

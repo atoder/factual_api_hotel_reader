@@ -4,7 +4,9 @@ and pulls the data from all Hotels and Motels in their system.
 There are 148,000 hotels, and they have a limit of 500 per minute, and 10,000 per day. 
 This tool generates all 167,344 or so hotels in in one csv, 
 extracting the data 1 chunk at a time incrementally, appending them to the csv file 
-and pausing properly so it doesn't go over the minute and day limit
+and pausing properly so it doesn't go over the minute and day limit. 
+
+You have to provide output csv file and intput zip code file
 
 ## API LINK
 http://developer.factual.com/
@@ -20,19 +22,15 @@ F_KEY: "YourKeyHere"
 F_SECRET: "YourSecretHere"
 ```
 
-### IMPORTANT INFO 
-Factual API only allows you to have 500 Row Limit. Meaning beyond 500 offset, 
-it won't allow you to access the data unless you ask them to give you access/premium API
-
 ## Step 2
-To run the script and have it output data into default *hotels.csv* just run
+To run the script and have it output data into default *hotels.csv* and read zipcodes from default **zipcodes.txt** just run
 ```
 ruby main.rb
 ```
 
-To run the script with a custom output file just pass the argument like below
+To run the script with a custom output file and/or custom zipcodes file just pass the arguments like below
 ```
-ruby main.rb custom_name.csv
+ruby main.rb custom_name.csv zipcodes.txt
 ```
 
 ## BONUS Functionality - Able to pause and pick up where it left off in case there are any interruptions. 
@@ -83,3 +81,7 @@ Sheraton Chicago Hotel & Towers,301 E North Water St,Chicago,IL,(312) 464-1000,6
 Chicago Marriott Downtown Magnificent Mile,540 N Michigan Ave,Chicago,IL,(312) 836-0100,60611,us
 Fairmont Hotel,950 Mason St,San Francisco,CA,(415) 982-6500,94108,us
 ```
+
+
+# Zipcode file
+**zipcodes.txt** is included but you can have your own custom zipcode file with custom zipcodes
