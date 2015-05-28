@@ -96,21 +96,21 @@ class HotelReader
   end
 
 
-  # if specific gem is not installed, this function will install it on the machine
+  # If specific gem is not installed, this function will install it on the machine
   def self.load_gem(name, version=nil)
     # needed if your ruby version is less than 1.9
     require 'rubygems'
     begin
       gem name, version
-    rescue loaderror
+    rescue LoadError
       version = "--version '#{version}'" unless version.nil?
       system("gem install #{name} #{version}")
-      gem.clear_paths
+      Gem.clear_paths
       retry
     end
-    # load proper gems
+    # Load proper gems
     require name if name != 'factual-api'
-    # special require case for factual gem
+    # Special require case for factual gem
     require 'factual' if name == 'factual-api'
   end
-end
+end 
