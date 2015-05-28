@@ -83,8 +83,8 @@ class HotelReader
       puts "Total hotels extracted by zipcode: #{hotel_count}"
     rescue => err
       puts "Exception: #{err}"
-      puts "\nGoing to keep retrying every 60 seconds.. until script is completed or terminated"
-      sleep(60)
+      puts "\nThere is some kind of exception error - Let's pause for 1 hour and then keep trying.. until script is completed or terminated"
+      sleep(3600)
       retry
     end
   end
