@@ -7,12 +7,19 @@ require_relative 'lib/hotel_reader.rb'
 HotelReader.load_gem 'factual-api'
 
 # Get the filename  we wish to write the data to
-file_name = ARGV[0].to_s
+output_file = ARGV[0].to_s
+zipcode_file = ARGV[1].to_s
 
-if file_name.nil? || file_name.empty?
+if output_file.nil? || output_file.empty?
   #if empty, use default hotels.csv
-  file_name = "hotels.csv"
+  output_file = "hotels.csv"
 end
+
+if zipcode_file.nil? || zipcode_file.empty?
+  #if empty, use default hotels.csv
+  zipcode_file = "zipcode.txt"
+end
+
 
 
 hotel_reader = HotelReader.new
@@ -21,6 +28,5 @@ hotel_reader = HotelReader.new
 total_hotels = hotel_reader.get_hotel_total_count
 p "Total number of hotels: " +  total_hotels.to_s
 
-hotel_reader.run(file_name)
-
+hotel_reader.run(output_file, zipcode_file)
 
