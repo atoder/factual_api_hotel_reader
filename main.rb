@@ -23,10 +23,10 @@ end
 
 
 hotel_reader = HotelReader.new
+hotel_reader.run(output_file, zipcode_file)
 
-# Get total count
+# Get total count in factual database
 total_hotels = hotel_reader.get_hotel_total_count
 p "Total number of hotels in factual database: " +  total_hotels.to_s
 
-hotel_reader.run(output_file, zipcode_file)
 
