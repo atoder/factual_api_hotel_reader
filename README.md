@@ -1,12 +1,17 @@
 # Factual API Hotel Data Tool
-A tool that runs Factuals API (you can find their key on their website, it costs $1) 
-and pulls the data from all Hotels and Motels in their system. 
+A tool that runs Factuals API and pulls the data from all Hotels and Motels in their system. 
 There are 148,000 hotels, and they have a limit of 500 per minute, and 10,000 per day. 
 This tool generates all 167,344 or so hotels in in one csv, 
-extracting the data 1 chunk at a time incrementally, appending them to the csv file 
-and pausing properly so it doesn't go over the minute and day limit. 
+extracting the data based on the zipcode, appending hotels to the csv file and pausing properly 
+so it doesn't go over the minute and day limit. 
 
-You have to provide output csv file and intput zip code file
+You have to provide output csv file and input zip code file
+
+The script can be paused/terminated and resumed. 
+This script will keep track of zip codes that we already checked (it will keep them in ```checked_zip_file.txt``` file)
+
+The script also makes sure that there are no duplicates hotel written to hotels.csv file by double checking
+if hotel's address already exists in hotels.csv
 
 ## API LINK
 http://developer.factual.com/
